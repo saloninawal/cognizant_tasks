@@ -1,0 +1,83 @@
+
+import java.util.Scanner;
+
+public class EmployeeManagementApp {
+    private static final Scanner scanner;
+
+    public EmployeeManagementApp() {
+    }
+
+    public static void main(String[] var0) {
+        while(true) {
+            System.out.println("Employee Management System");
+            System.out.println("1. Add Employee");
+            System.out.println("2. Update Employee");
+            System.out.println("3. Delete Employee");
+            System.out.println("4. View Employees");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int var1 = scanner.nextInt();
+            scanner.nextLine();
+            switch (var1) {
+                case 1:
+                    addEmployee();
+                    break;
+                case 2:
+                    updateEmployee();
+                    break;
+                case 3:
+                    deleteEmployee();
+                    break;
+                case 4:
+                    viewEmployees();
+                    break;
+                case 5:
+                    System.out.println("Exiting...");
+                    return;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
+            }
+        }
+    }
+
+    private static void addEmployee() {
+        System.out.print("Enter employee name: ");
+        String var0 = scanner.nextLine();
+        System.out.print("Enter employee position: ");
+        String var1 = scanner.nextLine();
+        System.out.print("Enter employee salary: ");
+        double var2 = scanner.nextDouble();
+        scanner.nextLine();
+        EmployeeDataRetrieval.addEmployee(var0, var1, var2);
+    }
+
+    private static void updateEmployee() {
+        System.out.print("Enter employee ID to update: ");
+        int var0 = scanner.nextInt();
+        scanner.nextLine();
+        System.out.print("Enter new employee name: ");
+        String var1 = scanner.nextLine();
+        System.out.print("Enter new employee position: ");
+        String var2 = scanner.nextLine();
+        System.out.print("Enter new employee salary: ");
+        double var3 = scanner.nextDouble();
+        scanner.nextLine();
+        EmployeeDataRetrieval.updateEmployee(var0, var1, var2, var3);
+    }
+
+    private static void deleteEmployee() {
+        System.out.print("Enter employee ID to delete: ");
+        int var0 = scanner.nextInt();
+        scanner.nextLine();
+        EmployeeDataRetrieval.deleteEmployee(var0);
+    }
+
+    private static void viewEmployees() {
+        System.out.println("Employee Records:");
+        EmployeeDataRetrieval.getEmployees();
+    }
+
+    static {
+        scanner = new Scanner(System.in);
+    }
+}
