@@ -1,0 +1,40 @@
+import java.io.IOException;
+import java.io.PrintStream;
+import java.nio.file.FileVisitResult;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
+import java.nio.file.Path;
+import java.nio.file.SimpleFileVisitor;
+import java.nio.file.attribute.BasicFileAttributes;
+
+public class DirectoryCopy {
+    public DirectoryCopy() {
+    }
+
+    public static void copyDirectory(final Path var0, final Path var1) {
+        try {
+            Files.walkFileTree(var0, new SimpleFileVisitor<Path>() {
+                public FileVisitResult preVisitDirectory(Path var1x, BasicFileAttributes var2) throws IOException {
+                    Path var3 = var1.resolve(var0.relativize(var1x));
+                    if (!Files.exists(var3, new LinkOption[0])) {
+                        Files.createDirectory(var3);
+                    }
+
+                    return FileVisitResult.CONTINUE;
+                }
+
+                public FileVisitResult visitFile(Path var1x, BasicFileAttributes var2) throws IOException {
+                    Files.copy(var1x, var1.resolve(var0.relativize(var1x)));
+                    return FileVisitResult.CONTINUE;
+                }
+            });
+            PrintStream var10000 = System.out;
+            String var10001 = String.valueOf(var0);
+            var10000.println("Directory copied from " + var10001 + " to " + String.valueOf(var1));
+        } catch (IOException var3) {
+            System.out.println("An error occurred while copying the directory.");
+            var3.printStackTrace();
+        }
+
+    }
+}

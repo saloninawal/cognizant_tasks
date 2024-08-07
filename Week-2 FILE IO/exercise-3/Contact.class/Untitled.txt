@@ -1,0 +1,47 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.Serializable;
+
+public class Contact implements Serializable {
+    private static final long serialVersionUID = 1L;
+    private String name;
+    private String phone;
+    private String email;
+
+    public Contact(String var1, String var2, String var3) {
+        this.name = var1;
+        this.phone = var2;
+        this.email = var3;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String var1) {
+        this.name = var1;
+    }
+
+    public String getPhone() {
+        return this.phone;
+    }
+
+    public void setPhone(String var1) {
+        this.phone = var1;
+    }
+
+    public String getEmail() {
+        return this.email;
+    }
+
+    public void setEmail(String var1) {
+        this.email = var1;
+    }
+
+    public String toString() {
+        return "Contact [name=" + this.name + ", phone=" + this.phone + ", email=" + this.email + "]";
+    }
+}

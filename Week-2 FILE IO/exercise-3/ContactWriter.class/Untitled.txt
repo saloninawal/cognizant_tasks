@@ -1,0 +1,38 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+
+public class ContactWriter {
+    public ContactWriter() {
+    }
+
+    public static void saveContact(String var0, Contact var1) {
+        try {
+            ObjectOutputStream var2 = new ObjectOutputStream(new FileOutputStream(var0));
+
+            try {
+                var2.writeObject(var1);
+                System.out.println("Contact saved successfully.");
+            } catch (Throwable var6) {
+                try {
+                    var2.close();
+                } catch (Throwable var5) {
+                    var6.addSuppressed(var5);
+                }
+
+                throw var6;
+            }
+
+            var2.close();
+        } catch (IOException var7) {
+            System.out.println("An error occurred while saving the contact.");
+            var7.printStackTrace();
+        }
+
+    }
+}

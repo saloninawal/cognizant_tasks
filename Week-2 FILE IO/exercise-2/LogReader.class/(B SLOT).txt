@@ -1,0 +1,17 @@
+(B SLOT)
+Security Governance, Risk and compliance
+Database Security
+Mobile and Wireless Security
+
+(D SLOT)
+Cyber Crimes and Cyber Security
+Operation System Security
+Cloud Security
+
+(F SLOT)
+Water Pollution and its Management
+Sustainable Energy
+Energy Conservation
+Municipal Solid Waste Management
+Alternative Sources of Energy
+Environmental Impact Assessment
