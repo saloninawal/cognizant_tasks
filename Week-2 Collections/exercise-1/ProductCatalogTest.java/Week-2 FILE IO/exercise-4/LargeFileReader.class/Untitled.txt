@@ -1,0 +1,48 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class LargeFileReader {
+    public LargeFileReader() {
+    }
+
+    public static List<String> readLargeFile(String var0) {
+        ArrayList var1 = new ArrayList();
+
+        try {
+            BufferedReader var2 = new BufferedReader(new FileReader(var0));
+
+            try {
+                System.out.println("Reading large file:");
+
+                String var3;
+                while((var3 = var2.readLine()) != null) {
+                    var1.add(var3);
+                    System.out.println(var3);
+                }
+            } catch (Throwable var6) {
+                try {
+                    var2.close();
+                } catch (Throwable var5) {
+                    var6.addSuppressed(var5);
+                }
+
+                throw var6;
+            }
+
+            var2.close();
+        } catch (IOException var7) {
+            System.out.println("An error occurred while reading the file.");
+            var7.printStackTrace();
+        }
+
+        return var1;
+    }
+}

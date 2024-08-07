@@ -1,0 +1,51 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Iterator;
+import java.util.List;
+
+public class LargeFileWriter {
+    public LargeFileWriter() {
+    }
+
+    public static void writeProcessedData(String var0, List<String> var1) {
+        try {
+            BufferedWriter var2 = new BufferedWriter(new FileWriter(var0));
+
+            try {
+                Iterator var3 = var1.iterator();
+
+                while(true) {
+                    if (!var3.hasNext()) {
+                        System.out.println("Processed data written successfully.");
+                        break;
+                    }
+
+                    String var4 = (String)var3.next();
+                    var2.write(var4);
+                    var2.newLine();
+                }
+            } catch (Throwable var6) {
+                try {
+                    var2.close();
+                } catch (Throwable var5) {
+                    var6.addSuppressed(var5);
+                }
+
+                throw var6;
+            }
+
+            var2.close();
+        } catch (IOException var7) {
+            System.out.println("An error occurred while writing the file.");
+            var7.printStackTrace();
+        }
+
+    }
+}
+

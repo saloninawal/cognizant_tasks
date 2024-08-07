@@ -1,0 +1,46 @@
+//
+// Source code recreated from a .class file by IntelliJ IDEA
+// (powered by FernFlower decompiler)
+//
+
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class LogReader {
+    public LogReader() {
+    }
+
+    public static void readLogs(String var0) {
+        try {
+            BufferedReader var1 = new BufferedReader(new FileReader(var0));
+
+            try {
+                System.out.println("Reading log messages from file:");
+
+                String var2;
+                while((var2 = var1.readLine()) != null) {
+                    System.out.println(var2);
+                }
+            } catch (Throwable var5) {
+                try {
+                    var1.close();
+                } catch (Throwable var4) {
+                    var5.addSuppressed(var4);
+                }
+
+                throw var5;
+            }
+
+            var1.close();
+        } catch (FileNotFoundException var6) {
+            System.out.println("The specified file was not found.");
+            var6.printStackTrace();
+        } catch (IOException var7) {
+            System.out.println("An error occurred while reading the log messages.");
+            var7.printStackTrace();
+        }
+
+    }
+}
