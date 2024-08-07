@@ -1,7 +1,0 @@
-29.04.24-Database Management Systems//40.73
-30.04.24-Forensics And Incident Response(B SLOT)//32.9
-2.05.24-Compiler Design//36.58
-3.05.24-Malware Analysis(D SLOT)//41.6-o
-Employability Skills and Practices//41
-7.05.24-Artificial Intelligence//39.09      .
-8.05.24-Electronics Thermal Management(G SLOT)//46.5-o
