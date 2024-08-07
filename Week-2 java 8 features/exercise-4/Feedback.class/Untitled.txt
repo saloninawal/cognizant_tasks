@@ -1,0 +1,52 @@
+
+import java.io.Serializable;
+
+public class Feedback implements Serializable {
+    private String feedbackId;
+    private String customerName;
+    private int rating;
+    private String comments;
+
+    public Feedback(String var1, String var2, int var3, String var4) {
+        this.feedbackId = var1;
+        this.customerName = var2;
+        this.rating = var3;
+        this.comments = var4;
+    }
+
+    public String getFeedbackId() {
+        return this.feedbackId;
+    }
+
+    public void setFeedbackId(String var1) {
+        this.feedbackId = var1;
+    }
+
+    public String getCustomerName() {
+        return this.customerName;
+    }
+
+    public void setCustomerName(String var1) {
+        this.customerName = var1;
+    }
+
+    public int getRating() {
+        return this.rating;
+    }
+
+    public void setRating(int var1) {
+        this.rating = var1;
+    }
+
+    public String getComments() {
+        return this.comments;
+    }
+
+    public void setComments(String var1) {
+        this.comments = var1;
+    }
+
+    public String toString() {
+        return "Feedback{feedbackId='" + this.feedbackId + "', customerName='" + this.customerName + "', rating=" + this.rating + ", comments='" + this.comments + "'}";
+    }
+}
