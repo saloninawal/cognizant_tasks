@@ -1,0 +1,9 @@
+#!/bin/bash
+echo "This is the second file." > file2.txt
+git add file2.txt
+git commit -m "Added file2.txt"
+echo "Adding more content to file1.txt." >> file1.txt
+git add file1.txt
+git commit -m "Updated file1.txt with additional content"
+git status
+git diff

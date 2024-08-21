@@ -1,0 +1,5 @@
+#!/bin/bash
+git clone https://github.com/srinivasangu/Tip-Calculator-JavaScript.git
+cd repo
+git log --oneline
+git show <commit_hash>

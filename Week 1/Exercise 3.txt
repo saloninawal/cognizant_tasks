@@ -1,0 +1,4 @@
+#!/bin/bash
+git config --global user.name "saloninawal"
+git config --global user.email "ss0835@srmist.edu.in"
+git config --list

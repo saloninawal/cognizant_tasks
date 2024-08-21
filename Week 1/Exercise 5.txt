@@ -1,0 +1,9 @@
+git branch new-feature
+git checkout new-feature
+echo "This is a new feature." > feature.txt
+git add feature.txt
+git commit -m "Added feature.txt with new feature content"
+git checkout main
+git merge new-feature
+git add .
+git commit -m "Resolved merge conflicts and merged new-feature into main"
